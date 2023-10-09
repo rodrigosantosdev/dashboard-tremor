@@ -1,7 +1,7 @@
 import LeftColumns from "./components/LeftColumns";
 import Navbar from "./components/Navbar";
 import RightColumns from "./components/RightColumns";
-import Sidebar from "./components/SIdebar";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
