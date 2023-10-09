@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import LeftColumns from "./components/LeftColumns";
+import Navbar from "./components/Navbar";
+import RightColumns from "./components/RightColumns";
+import Sidebar from "./components/SIdebar";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <main className="flex bg-dark-tremor-brand-faint text-dark-tremor-background-emphasis">
+        <Sidebar />
+        <div className="flex flex-col w-full p-8">
+          <Navbar />
+          <div className="grid w-full grid-cols-3 gap-4 mt-4">
+            <div className="col-span-2">
+              <LeftColumns />
+            </div>
+            <div className="w-full">
+              <RightColumns />
+            </div>
+          </div>
+        </div>
+      </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
